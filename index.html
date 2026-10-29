@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ditdah — Morse Code Translator Demo</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 640px; margin: 40px auto; padding: 0 16px; background: #0f172a; color: #e2e8f0; }
+  h1 { font-size: 1.5rem; }
+  textarea { width: 100%; box-sizing: border-box; min-height: 90px; padding: 10px; border-radius: 8px; border: 1px solid #334155; background: #1e293b; color: #e2e8f0; font-size: 1rem; }
+  .out { margin-top: 16px; padding: 12px; border-radius: 8px; background: #1e293b; border: 1px solid #334155; min-height: 40px; word-break: break-word; }
+  a { color: #2dd4bf; }
+</style>
+</head>
+<body>
+<h1>ditdah — Morse Code Translator (demo)</h1>
+<p>Type below to convert text to Morse code instantly. For audio, image &amp; video decoding, WPM playback and more, use the full tool: <a href="https://morsecodetranslatorai.com/">Morse Code Translator</a>.</p>
+<textarea id="in" placeholder="Type text here...">HELLO WORLD</textarea>
+<div class="out" id="out"></div>
+<p><a href="https://github.com/ditdah">Source on GitHub</a> · <a href="https://morsecodetranslatorai.com/morse-code-chart-printable/">Printable Morse Code Chart</a></p>
+<script src="morse.js"></script>
+<script>
+  const input = document.getElementById("in");
+  const out = document.getElementById("out");
+  function update() { out.textContent = textToMorse(input.value); }
+  input.addEventListener("input", update);
+  update();
+</script>
+</body>
+</html>
